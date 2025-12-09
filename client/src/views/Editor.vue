@@ -108,7 +108,7 @@ const onSubmit = async () => {
             images: images.value
         });
         showSuccessToast('更新成功!');
-        router.push(`/post/${postId.value}`);
+        router.push('/');
     } else {
         await createPost({
             title: title.value,
