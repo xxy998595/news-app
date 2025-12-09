@@ -59,7 +59,13 @@ const handleEdit = () => {
 
 const formatDate = (dateStr) => {
   const date = new Date(dateStr);
-  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+  const y = date.getFullYear();
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
+  const h = date.getHours().toString().padStart(2, '0');
+  const min = date.getMinutes().toString().padStart(2, '0');
+  const s = date.getSeconds().toString().padStart(2, '0');
+  return `${y}年${m}月${d}日 ${h}:${min}:${s}`;
 };
 
 const stripHtml = (html) => {
