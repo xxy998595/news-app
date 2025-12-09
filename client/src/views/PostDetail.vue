@@ -106,7 +106,7 @@ const stripHtml = (html) => {
         <div class="info">
             <div class="name">{{ post.User?.username }}</div>
             <div class="meta">
-                <span class="time">{{ formatDate(post.createdAt) }}</span>
+                <span class="time">{{ formatDate(post.updatedAt) }}</span>
             </div>
         </div>
         <van-button type="primary" size="small" class="follow-btn">关注</van-button>

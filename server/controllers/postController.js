@@ -75,7 +75,7 @@ exports.getPosts = async (req, res) => {
         model: User,
         attributes: ['id', 'username']
       }],
-      order: [['createdAt', 'DESC']],
+      order: [['updatedAt', 'DESC']],
       limit: limit,
       offset: offset
     });

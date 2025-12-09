@@ -42,7 +42,7 @@ const stripHtml = (html) => {
         <div class="footer">
             <span class="tag" v-if="post.tags && post.tags[0]">{{ post.tags[0] }}</span>
             <span class="author">{{ post.User?.username || '用户' }}</span>
-            <span class="time">{{ formatDate(post.createdAt) }}</span>
+            <span class="time">{{ formatDate(post.updatedAt) }}</span>
         </div>
       </div>
       <div class="right-image">
