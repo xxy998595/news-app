@@ -4,12 +4,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME || 'news_app',
-  process.env.DB_USER || 'root',
-  process.env.DB_PASS || 'password',
+  process.env.MYSQLDATABASE || process.env.DB_NAME || 'news_app',
+  process.env.MYSQLUSER || process.env.DB_USER || 'root',
+  process.env.MYSQLPASSWORD || process.env.DB_PASS || 'password',
   {
-    host: process.env.DB_HOST || 'localhost',
-    port: process.env.DB_PORT || 3306,
+    host: process.env.MYSQLHOST || process.env.DB_HOST || 'localhost',
+    port: process.env.MYSQLPORT || process.env.DB_PORT || 3306,
     dialect: 'mysql',
     logging: false,
     define: {
