@@ -4,6 +4,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { getPostById, recommendTopic } from '../api/post';
 import { useUserStore } from '../stores/user';
 import { showLoadingToast, closeToast, Button } from 'vant';
+import defaultAvatar from '../image/5.png';
 
 const route = useRoute();
 const router = useRouter();
@@ -57,7 +58,8 @@ const handleEdit = () => {
 };
 
 const formatDate = (dateStr) => {
-  return new Date(dateStr).toLocaleString();
+  const date = new Date(dateStr);
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 };
 
 const stripHtml = (html) => {
@@ -94,7 +96,7 @@ const stripHtml = (html) => {
       <h1 class="article-title">{{ post.title }}</h1>
 
       <div class="author-card">
-        <div class="avatar">{{ post.User?.username?.charAt(0).toUpperCase() }}</div>
+        <img :src="defaultAvatar" class="avatar-img" />
         <div class="info">
             <div class="name">{{ post.User?.username }}</div>
             <div class="meta">
@@ -169,6 +171,13 @@ const stripHtml = (html) => {
     justify-content: center;
     font-weight: bold;
     margin-right: 10px;
+}
+.avatar-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
 }
 .info {
     flex: 1;

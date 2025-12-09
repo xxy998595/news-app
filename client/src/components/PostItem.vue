@@ -15,7 +15,8 @@ const goToDetail = () => {
 };
 
 const formatDate = (dateStr) => {
-  return new Date(dateStr).toLocaleString();
+  const date = new Date(dateStr);
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 };
 
 const stripHtml = (html) => {

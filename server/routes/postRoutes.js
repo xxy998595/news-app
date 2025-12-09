@@ -5,8 +5,10 @@ const aiController = require('../controllers/aiController');
 const auth = require('../middleware/auth');
 const upload = require('../middleware/upload');
 
-// All routes here require authentication
-router.get('/', auth, postController.getPosts);
+// Public routes
+router.get('/', postController.getPosts);
+
+// Protected routes
 router.get('/:id', auth, postController.getPostById);
 router.post('/', auth, postController.createPost);
 router.put('/:id', auth, postController.updatePost);
