@@ -21,7 +21,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'vant': ['vant'],
           'vue-vendor': ['vue', 'vue-router', 'pinia']
         }
       }
