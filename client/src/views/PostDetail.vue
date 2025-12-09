@@ -106,6 +106,17 @@ const stripHtml = (html) => {
       
       <div class="text-content rich-text" v-html="post.content"></div>
       
+      <div class="image-list" v-if="post.images && post.images.length">
+        <van-image
+          v-for="(img, index) in post.images"
+          :key="index"
+          width="100%"
+          fit="contain"
+          :src="img"
+          class="detail-image"
+        />
+      </div>
+      
       <div class="tags" v-if="post.tags && post.tags.length">
         <div class="tag-item" v-for="tag in post.tags" :key="tag">
             {{ tag }}
@@ -226,5 +237,12 @@ const stripHtml = (html) => {
     color: #d43d3d;
     font-weight: bold;
     font-size: 15px;
+}
+
+/* Detail Images */
+.detail-image {
+  margin-bottom: 16px;
+  border-radius: 4px;
+  overflow: hidden;
 }
 </style>
